@@ -1,0 +1,66 @@
+﻿ @model SusiSu.Models.SiparisDetay
+<button id="modal-openner">Open dialog</button>
+
+<div id="dialog-modal" title="Basic modal dialog">
+    @* Ajax.BeginForm("ActionName,ControllerName, Ajax options {UpdateTargetId = 'formId',OnSuccess = 'Form post back olup bittikten sonra
+        çalışacak javascript fonksiyonun adı'}") *@
+    @using (Ajax.BeginForm("Index", "Home", new AjaxOptions { UpdateTargetId = "ID", OnSuccess = "onSuccessAjax" }))
+    {
+        <div>
+            <fieldset>
+                <legend>su bilgileri</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Adet)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.Adet)
+                    @Html.ValidationMessageFor(m => m.Adet)
+                </div>
+
+
+                <p>
+                    <input type="submit" value="Submit" />
+                </p>
+            </fieldset>
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $('#dialog-modal').dialog({
+            autoOpen: false,
+            widht: 300,
+            height: 250,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            }
+        });
+        //modal-openner butonun ID'si, bu butona tıklandığında olacakları yazıyoruz.
+        $('#modal-openner').click(function () {
+            //Butona tıklandığında #dialog-modal ID'li kısmı popup olarak aç diyoruz.
+            $('#dialog-modal').dialog('open');
+        });
+    });
+
+    function onSuccessAjax(result) {
+        //Tamama basıldığında #dialog-modal kapatılıyor.
+        $('#dialog-modal').dialog('close');
+
+        //Json'dan dönen mesaj trueysa falsesa yapılacakları yazıyorum.
+        if (result.IsSuccess == false) {
+            alert(result.JsonMessage);
+        }
+        else {
+            alert(result.JsonMessage);
+        }
+        //-
+    }
+</script>

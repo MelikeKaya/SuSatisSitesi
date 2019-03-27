@@ -1,0 +1,69 @@
+﻿@model SusiSu.Models.Su
+
+@{
+    //ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+
+<hr />
+<div class="container-fluid pt-140" style="margin-left:30px">
+
+    <div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.StokMiktari)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StokMiktari)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Boy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Boy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Tur)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tur)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UretimTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UretimTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SonKullanmaTarihi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SonKullanmaTarihi)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Düzenle ", "Edit", new { id = Model.Id })  |
+        @Html.ActionLink("Listeye Dön", "Index")
+    </p>
+</div>
+

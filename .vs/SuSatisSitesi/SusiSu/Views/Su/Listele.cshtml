@@ -1,0 +1,153 @@
+﻿@using SusiSu.Helpers
+@model IEnumerable<SusiSu.Models.ListeleViewModel>
+
+
+@{
+    ViewBag.Title = "Listele";
+}
+
+
+
+
+
+<section class="pt-140 pb-90 top-shape">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-lg-4">
+                <!-- single bottle deliver wrap -->
+                <div class="single-bottle-inner text-center">
+                    <div class="bottle-image">
+                        <img src="~/Content/assets/img/icons/water-gallon.svg" alt="" class="svg">
+                    </div>
+                    <div class="single-bottle-text">
+
+
+
+                        <h4> @SusiSu.Enums.Enums.Boy.Buyuk.GetEnumDisplayName()</h4>
+
+
+                        @foreach (var item in Model.Where(x => x.Boy == SusiSu.Enums.Enums.Boy.Buyuk))
+                        {
+
+
+
+                            if (item.Tur == SusiSu.Enums.Enums.Tur.Cam)
+                            {
+                                <h5> Cam Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            }
+                            else
+                            {
+                                <h5> Plastik Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+
+                            }
+
+                        }
+
+
+
+                      <p> </p>
+                        <a href="service-details.html"><i class="fa fa-arrow-circle-o-right"></i>Sipariş Ver</a>
+                    </div>
+                </div><!-- /.End of single bottle deliver wrap -->
+            </div><!-- /.col-->
+            <div class="col-md-6 col-lg-4">
+                <!-- single bottle deliver wrap -->
+                <div class="single-bottle-inner text-center">
+                    <div class="bottle-image">
+                        <img src="~/Content/assets/img/icons/big-bottle-of-water.svg" alt="" class="svg">
+                    </div>
+                    <div class="single-bottle-text">
+                        <h4> @SusiSu.Enums.Enums.Boy.Damacana.GetEnumDisplayName()</h4>
+                        @foreach (var item in Model.Where(x => x.Boy == SusiSu.Enums.Enums.Boy.Damacana))
+                        {
+                            if (item.Tur == SusiSu.Enums.Enums.Tur.Cam)
+                            {
+                                <h5> Cam Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            }
+                            else
+                            {
+                                <h5> Plastik Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+
+                            }
+
+                        }
+                
+         
+                        <a href="service-details.html"><i class="fa fa-arrow-circle-o-right"></i>Sipariş Ver</a>
+                    </div>
+                </div><!--/. End of single bottle deliver wrap -->
+            </div><!-- /.col-->
+            <div class="col-md-6 col-lg-4">
+                <!-- single bottle deliver wrap -->
+                <div class="single-bottle-inner text-center">
+                    <div class="bottle-image">
+                        <img src="~/Content/assets/img/icons/water-bottle.svg" alt="" class="svg">
+                    </div>
+                    <div class="single-bottle-text">
+                        <h4>   @SusiSu.Enums.Enums.Boy.Kucuk.GetEnumDisplayName()</h4>
+
+                        @foreach (var item in Model.Where(x => x.Boy == SusiSu.Enums.Enums.Boy.Kucuk))
+                        {
+                            if (item.Tur == SusiSu.Enums.Enums.Tur.Cam)
+                            {
+                                <h5> Cam Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            }
+                            else
+                            {
+                                <h5> Plastik Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+
+                            }
+
+                        }
+               
+                        <a href="service-details.html"><i class="fa fa-arrow-circle-o-right"></i>Sipariş Ver</a>
+                    </div>
+                </div><!-- End of single bottle deliver wrap -->
+            </div><!-- /.col-->
+
+            <div class="col-md-6 col-lg-4">
+                <!-- single bottle deliver wrap -->
+                <div class="single-bottle-inner text-center">
+                    <div class="bottle-image">
+                        <img src="~/Content/assets/img/icons/big-bottle-of-water-with-handle.svg" alt="" class="svg">
+                    </div>
+                    <div class="single-bottle-text">
+
+                        <h4>   @SusiSu.Enums.Enums.Boy.Orta.GetEnumDisplayName()</h4>
+                        @foreach (var item in Model.Where(x => x.Boy == SusiSu.Enums.Enums.Boy.Orta))
+                        {
+
+                            if (item.Tur == SusiSu.Enums.Enums.Tur.Cam)
+                            {
+                                <h5> Cam Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            }
+                            else
+                            {
+                                <h5> Plastik Stoktaki Miktar</h5>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+
+                            }
+
+                        }
+
+
+
+                     
+                       
+                        <a href="service-details.html"><i class="fa fa-arrow-circle-o-right"></i>Sipariş Ver</a>
+                    </div>
+
+                </div><!-- /.End of single bottle deliver wrap -->
+            </div><!-- /.col-->
+        </div><!-- /.row-->
+    </div><!-- /.container-->
+</section>
+

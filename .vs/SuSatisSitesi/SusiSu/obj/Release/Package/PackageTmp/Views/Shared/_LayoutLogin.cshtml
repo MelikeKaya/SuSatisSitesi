@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    <link rel="stylesheet" href="~/Content/LoginFolder/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/Content/LoginFolder/css/style.css">
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <!-- JS -->
+    <script src="~/Content/LoginFolder/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/LoginFolder/js/main.js"></script>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>
